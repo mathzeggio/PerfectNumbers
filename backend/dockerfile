@@ -1,0 +1,6 @@
+FROM adoptopenjdk/openjdk17:alpine-jre
+
+WORKDIR /app
+COPY . /app
+
+CMD ["java", "-jar", "your-spring-app.jar"]
