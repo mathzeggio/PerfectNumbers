@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { styles } from '../templates/styles';
 
 const RangeForm = ({ onSubmit }) => {
   const [start, setStart] = useState('');
@@ -21,25 +22,28 @@ const RangeForm = ({ onSubmit }) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form onSubmit={handleSubmit} style={styles.form}>
+      <h2 style={styles.title}>Find Perfect Numbers in a Range</h2>
+      <label style={styles.label}>
         Start:
         <input
           type="text"
           value={start}
           onChange={(e) => setStart(e.target.value)}
+          style={styles.input}
         />
       </label>
-      <label>
+      <label style={styles.label}>
         End:
         <input
           type="text"
           value={end}
           onChange={(e) => setEnd(e.target.value)}
+          style={styles.input}
         />
       </label>
-      <button type="submit">Find Perfect Numbers</button>
-      {response && <p>{response}</p>}
+      <button type="submit" style={styles.button}>Find Perfect Numbers</button>
+      {response && <p style={styles.response}>{response}</p>}
     </form>
   );
 };
